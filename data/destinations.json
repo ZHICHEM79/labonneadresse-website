@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "alger",
+    "title": "Alger",
+    "excerpt": "Visites culturelles, marchés et gastronomie.",
+    "image": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80",
+    "content": "Description complète d'Alger, programmes possibles et suggestions..."
+  },
+  {
+    "slug": "dubai",
+    "title": "Dubaï",
+    "excerpt": "Luxe, shopping et architecture moderne.",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
+    "content": "Description complète de Dubaï..."
+  }
+]
