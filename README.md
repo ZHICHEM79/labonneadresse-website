@@ -1,26 +1,30 @@
-# LA BONNE ADRESSE
+# LA BONNE ADRESSE — Premium
 
-Site Next.js prêt à déployer.
+Ce dépôt contient la version premium du site LA BONNE ADRESSE.
 
-Pour lancer localement:
+ENVIRONMENT VARIABLES (Vercel / local .env):
+- FORMSPREE_URL : (optionnel) url Formspree endpoint, ex: https://formspree.io/f/xxxx
+- STRIPE_SECRET_KEY : (optionnel) clé secrète Stripe
+- NEXT_PUBLIC_BASE_URL : base URL publique (ex: https://labonneadresse.shop)
 
-1. Installer les dépendances:
+INSTALL (local):
+1. npm install
+2. npm run dev
 
-   npm install
+DEPLOY (Vercel):
+1. Importer le repo sur Vercel
+2. Dans Vercel > Settings > Environment Variables, ajouter FORMSPREE_URL et STRIPE_SECRET_KEY si utilisés
+3. Déployer
+4. Connecter domaine labonneadresse.shop (Vercel -> Domains)
 
-2. Lancer en dev:
+DNS (Spaceship):
+- A record @ -> 76.76.21.21
+- CNAME www -> cname.vercel-dns.com
 
-   npm run dev
+STRIPE:
+- La route /api/stripe-session crée une session Checkout si STRIPE_SECRET_KEY est configurée.
+- Dans le frontend vous devez appeler cette API pour lancer le paiement.
 
-3. Ouvrir http://localhost:3000
-
-Déploiement sur Vercel:
-
-1. Pousser ce repo sur GitHub (il est déjà créé: https://github.com/ZHICHEM79/labonneadresse-website)
-2. Importer le repo sur Vercel et déployer.
-3. Connecter le domaine labonneadresse.shop (Vercel -> Domains)
-4. Dans Spaceship (ton registrar) ajouter:
-   - A record @ -> 76.76.21.21
-   - CNAME www -> cname.vercel-dns.com
-
-Contact: contact@labonneadresse.shop
+Formulaire de contact:
+- Appel POST -> /api/contact (payload JSON)
+- Si FORMSPREE_URL est configuré, la route forwarde vers Formspree.
